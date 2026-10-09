@@ -1,0 +1,4 @@
+group1,group2,meandiff,q_stat,df,p_adj,significant,direction
+AMBIENT,PRECOOLED,8.595,7.544,29.3,0.0,True,group1 higher spoilage
+AMBIENT,CHILLED,5.887,5.62,30.0,0.0012,True,group1 higher spoilage
+CHILLED,PRECOOLED,2.708,2.38,29.3,0.2285,False,group1 higher spoilage

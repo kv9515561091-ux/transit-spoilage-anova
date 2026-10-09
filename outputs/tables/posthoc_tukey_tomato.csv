@@ -1,0 +1,4 @@
+group1,group2,meandiff,p_adj,significant,direction
+AMBIENT,PRECOOLED,-8.595,2.3850260655322586e-09,True,group2 higher spoilage
+AMBIENT,CHILLED,-5.887,9.670791417115687e-06,True,group2 higher spoilage
+CHILLED,PRECOOLED,-2.708,0.04793876166582778,True,group2 higher spoilage

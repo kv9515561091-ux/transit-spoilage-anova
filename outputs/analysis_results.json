@@ -1,0 +1,466 @@
+{
+  "design": {
+    "type": "3x2 factorial, blocked by commodity, balanced",
+    "temperature_levels": [
+      "AMBIENT",
+      "CHILLED",
+      "PRECOOLED"
+    ],
+    "packaging_levels": [
+      "JUTE_BAG",
+      "CFB_CRATE"
+    ],
+    "commodities": [
+      "Tomato",
+      "Onion",
+      "Banana",
+      "Cauliflower"
+    ],
+    "replicates_per_cell": 8,
+    "total_runs": 192,
+    "primary_response": "spoilage_pct",
+    "secondary_response": "shelf_life_days",
+    "alpha": 0.05,
+    "practical_threshold_pp": 3.0
+  },
+  "pooled_model_rejected": {
+    "r_squared": 0.8555,
+    "anova": {
+      "C(commodity)": {
+        "SS": 9779.57,
+        "df": 3.0,
+        "F": 307.08,
+        "p": 3.712008861448526e-71,
+        "omega_squared": 0.7243
+      },
+      "C(temp_level)": {
+        "SS": 1259.19,
+        "df": 2.0,
+        "F": 59.31,
+        "p": 1.3930466081114435e-20,
+        "omega_squared": 0.092
+      },
+      "C(pack_level)": {
+        "SS": 463.33,
+        "df": 1.0,
+        "F": 43.65,
+        "p": 4.152917424273871e-10,
+        "omega_squared": 0.0336
+      },
+      "C(temp_level):C(pack_level)": {
+        "SS": 3.65,
+        "df": 2.0,
+        "F": 0.17,
+        "p": 0.8420960600999384,
+        "omega_squared": 0.0
+      }
+    }
+  },
+  "blocked_models": [
+    {
+      "commodity": "Tomato",
+      "n": 48,
+      "r_squared": 0.6642,
+      "factors": {
+        "temperature": {
+          "SS": 617.94,
+          "df": 2.0,
+          "MS": 308.969,
+          "F": 36.435,
+          "p": 6.665605593389672e-10,
+          "omega_squared": 0.5621,
+          "omega_label": "large",
+          "partial_eta_squared": 0.6344,
+          "cohens_f": 6.0362
+        },
+        "packaging": {
+          "SS": 79.28,
+          "df": 1.0,
+          "MS": 79.285,
+          "F": 9.35,
+          "p": 0.0038710467135401852,
+          "omega_squared": 0.0662,
+          "omega_label": "medium",
+          "partial_eta_squared": 0.1821,
+          "cohens_f": 3.0577
+        },
+        "temperature x packaging": {
+          "SS": 7.33,
+          "df": 2.0,
+          "MS": 3.666,
+          "F": 0.432,
+          "p": 0.6518736849143482,
+          "omega_squared": 0.0,
+          "omega_label": "negligible",
+          "partial_eta_squared": 0.0202,
+          "cohens_f": 0.6575
+        }
+      },
+      "assumptions_temp": {
+        "shapiro_W": 0.9754110147121681,
+        "shapiro_p": 0.4048135078349093,
+        "normality_ok": true,
+        "levene_stat": 0.1209068782703567,
+        "levene_p": 0.886403351112775,
+        "brown_forsythe_stat": 0.12049242571457128,
+        "brown_forsythe_p": 0.8867688383501399,
+        "equal_variance_ok": true,
+        "equal_variance_ok_bf": true,
+        "max_sd_ratio": 1.1695812487020685
+      },
+      "assumptions_pack": {
+        "shapiro_W": 0.9754110147121681,
+        "shapiro_p": 0.4048135078349093,
+        "normality_ok": true,
+        "levene_stat": 0.41898574866842575,
+        "levene_p": 0.5206609423093066,
+        "brown_forsythe_stat": 0.4186101766066824,
+        "brown_forsythe_p": 0.5208470411200903,
+        "equal_variance_ok": true,
+        "equal_variance_ok_bf": true,
+        "max_sd_ratio": 1.2007564544653142
+      },
+      "welch_F": 30.68,
+      "welch_p": 5.7428007474666916e-08,
+      "kruskal_H": 27.915,
+      "kruskal_p": 8.67552953305249e-07
+    },
+    {
+      "commodity": "Onion",
+      "n": 48,
+      "r_squared": 0.674,
+      "factors": {
+        "temperature": {
+          "SS": 41.68,
+          "df": 2.0,
+          "MS": 20.84,
+          "F": 12.492,
+          "p": 5.532633780025735e-05,
+          "omega_squared": 0.177,
+          "omega_label": "large",
+          "partial_eta_squared": 0.373,
+          "cohens_f": 3.5344
+        },
+        "packaging": {
+          "SS": 101.88,
+          "df": 1.0,
+          "MS": 101.879,
+          "F": 61.068,
+          "p": 1.0173765767088946e-09,
+          "omega_squared": 0.4626,
+          "omega_label": "large",
+          "partial_eta_squared": 0.5925,
+          "cohens_f": 7.8146
+        },
+        "temperature x packaging": {
+          "SS": 1.31,
+          "df": 2.0,
+          "MS": 0.654,
+          "F": 0.392,
+          "p": 0.678062011447756,
+          "omega_squared": 0.0,
+          "omega_label": "negligible",
+          "partial_eta_squared": 0.0183,
+          "cohens_f": 0.6262
+        }
+      },
+      "assumptions_temp": {
+        "shapiro_W": 0.9683372869269758,
+        "shapiro_p": 0.21804140661688703,
+        "normality_ok": true,
+        "levene_stat": 0.18535886722229084,
+        "levene_p": 0.8314371864474164,
+        "brown_forsythe_stat": 0.14773595009683874,
+        "brown_forsythe_p": 0.863075554933015,
+        "equal_variance_ok": true,
+        "equal_variance_ok_bf": true,
+        "max_sd_ratio": 1.2363827679111774
+      },
+      "assumptions_pack": {
+        "shapiro_W": 0.9683372869269758,
+        "shapiro_p": 0.21804140661688703,
+        "normality_ok": true,
+        "levene_stat": 0.09182759605441042,
+        "levene_p": 0.7632327093152181,
+        "brown_forsythe_stat": 0.13564119572495315,
+        "brown_forsythe_p": 0.7143427922132896,
+        "equal_variance_ok": true,
+        "equal_variance_ok_bf": true,
+        "max_sd_ratio": 1.0416397501432388
+      },
+      "welch_F": 5.046,
+      "welch_p": 0.012971416452296105,
+      "kruskal_H": 7.589,
+      "kruskal_p": 0.022498857152993674
+    },
+    {
+      "commodity": "Banana",
+      "n": 48,
+      "r_squared": 0.7128,
+      "factors": {
+        "temperature": {
+          "SS": 253.26,
+          "df": 2.0,
+          "MS": 126.629,
+          "F": 34.049,
+          "p": 1.6253368518668194e-09,
+          "omega_squared": 0.4488,
+          "omega_label": "large",
+          "partial_eta_squared": 0.6185,
+          "cohens_f": 5.8351
+        },
+        "packaging": {
+          "SS": 111.9,
+          "df": 1.0,
+          "MS": 111.905,
+          "F": 30.089,
+          "p": 2.1754033521333893e-06,
+          "omega_squared": 0.1975,
+          "omega_label": "large",
+          "partial_eta_squared": 0.4174,
+          "cohens_f": 5.4854
+        },
+        "temperature x packaging": {
+          "SS": 22.59,
+          "df": 2.0,
+          "MS": 11.297,
+          "F": 3.038,
+          "p": 0.0585959369880745,
+          "omega_squared": 0.0277,
+          "omega_label": "small",
+          "partial_eta_squared": 0.1264,
+          "cohens_f": 1.7429
+        }
+      },
+      "assumptions_temp": {
+        "shapiro_W": 0.9904036038955903,
+        "shapiro_p": 0.9608701479537588,
+        "normality_ok": true,
+        "levene_stat": 1.5399074369701655,
+        "levene_p": 0.2254856233412529,
+        "brown_forsythe_stat": 1.418484332214942,
+        "brown_forsythe_p": 0.2526966020894443,
+        "equal_variance_ok": true,
+        "equal_variance_ok_bf": true,
+        "max_sd_ratio": 1.5189928136326516
+      },
+      "assumptions_pack": {
+        "shapiro_W": 0.9904036038955903,
+        "shapiro_p": 0.9608701479537588,
+        "normality_ok": true,
+        "levene_stat": 8.931682901899404,
+        "levene_p": 0.004486220837969491,
+        "brown_forsythe_stat": 4.5997695648325,
+        "brown_forsythe_p": 0.03729157001399882,
+        "equal_variance_ok": false,
+        "equal_variance_ok_bf": false,
+        "max_sd_ratio": 1.594107317197399
+      },
+      "welch_F": 18.631,
+      "welch_p": 6.4889411832704346e-06,
+      "kruskal_H": 22.818,
+      "kruskal_p": 1.1093847329550115e-05
+    },
+    {
+      "commodity": "Cauliflower",
+      "n": 48,
+      "r_squared": 0.7663,
+      "factors": {
+        "temperature": {
+          "SS": 1234.32,
+          "df": 2.0,
+          "MS": 617.158,
+          "F": 59.973,
+          "p": 4.914602647170887e-13,
+          "omega_squared": 0.6527,
+          "omega_label": "large",
+          "partial_eta_squared": 0.7407,
+          "cohens_f": 7.7442
+        },
+        "packaging": {
+          "SS": 181.55,
+          "df": 1.0,
+          "MS": 181.546,
+          "F": 17.642,
+          "p": 0.00013578412489330906,
+          "omega_squared": 0.0921,
+          "omega_label": "medium",
+          "partial_eta_squared": 0.2958,
+          "cohens_f": 4.2002
+        },
+        "temperature x packaging": {
+          "SS": 1.14,
+          "df": 2.0,
+          "MS": 0.569,
+          "F": 0.055,
+          "p": 0.9462856116425639,
+          "omega_squared": 0.0,
+          "omega_label": "negligible",
+          "partial_eta_squared": 0.0026,
+          "cohens_f": 0.2351
+        }
+      },
+      "assumptions_temp": {
+        "shapiro_W": 0.9739537200424354,
+        "shapiro_p": 0.35815284979128026,
+        "normality_ok": true,
+        "levene_stat": 0.14170655157413065,
+        "levene_p": 0.8682616431177732,
+        "brown_forsythe_stat": 0.14671496481105628,
+        "brown_forsythe_p": 0.863951458097616,
+        "equal_variance_ok": true,
+        "equal_variance_ok_bf": true,
+        "max_sd_ratio": 1.0887240720561961
+      },
+      "assumptions_pack": {
+        "shapiro_W": 0.9739537200424354,
+        "shapiro_p": 0.35815284979128026,
+        "normality_ok": true,
+        "levene_stat": 0.33030700635243465,
+        "levene_p": 0.5682787129414623,
+        "brown_forsythe_stat": 0.249008106314225,
+        "brown_forsythe_p": 0.620152496356983,
+        "equal_variance_ok": true,
+        "equal_variance_ok_bf": true,
+        "max_sd_ratio": 1.0718432522330579
+      },
+      "welch_F": 42.133,
+      "welch_p": 1.9634294563529166e-09,
+      "kruskal_H": 32.443,
+      "kruskal_p": 9.016541600676159e-08
+    }
+  ],
+  "shelf_life_secondary": [
+    {
+      "commodity": "Tomato",
+      "ambient_mean": 5.8,
+      "chilled_mean": 6.31,
+      "precooled_mean": 6.13,
+      "gain_days": 0.32,
+      "F": 1.17,
+      "p": 0.3211223470958986,
+      "kruskal_H": 2.63,
+      "kruskal_p": 0.2685079174218213
+    },
+    {
+      "commodity": "Onion",
+      "ambient_mean": 26.61,
+      "chilled_mean": 24.27,
+      "precooled_mean": 26.17,
+      "gain_days": -0.45,
+      "F": 3.56,
+      "p": 0.03674909697338746,
+      "kruskal_H": 6.53,
+      "kruskal_p": 0.038187608834826935
+    },
+    {
+      "commodity": "Banana",
+      "ambient_mean": 6.96,
+      "chilled_mean": 6.98,
+      "precooled_mean": 7.43,
+      "gain_days": 0.47,
+      "F": 1.69,
+      "p": 0.19604095871997249,
+      "kruskal_H": 1.51,
+      "kruskal_p": 0.46928763896537407
+    },
+    {
+      "commodity": "Cauliflower",
+      "ambient_mean": 4.77,
+      "chilled_mean": 5.09,
+      "precooled_mean": 5.2,
+      "gain_days": 0.43,
+      "F": 2.36,
+      "p": 0.10643428296379422,
+      "kruskal_H": 4.14,
+      "kruskal_p": 0.1263105987523454
+    }
+  ],
+  "commercial": {
+    "lane": {
+      "km": 62,
+      "trips_per_week": 6,
+      "kg_per_trip": 900.0,
+      "ambient_freight_inr_per_trip": 3200.0,
+      "reefer_freight_inr_per_trip": 7800.0,
+      "precool_loading_inr_per_trip": 1400.0,
+      "jute_bag_inr_per_kg": 4.2,
+      "cfb_crate_inr_per_kg": 11.5,
+      "cfb_crate_turns": 60,
+      "cfb_crate_salvage_inr": 45.0,
+      "retail_inr_per_kg": {
+        "Tomato": 42.74,
+        "Onion": 53.53,
+        "Banana": 49.3,
+        "Cauliflower": 58.0
+      },
+      "indian_fleet_fill_rate_pct": 85.0
+    },
+    "lines": [
+      {
+        "commodity": "Tomato",
+        "best_temp": "PRECOOLED",
+        "best_temp_spoilage_pct": 19.38,
+        "ambient_spoilage_pct": 27.98,
+        "delta_pp": 8.6,
+        "materially_significant": true,
+        "best_pack": "CFB_CRATE",
+        "pack_delta_pp": 2.57,
+        "weekly_kg": 5400.0,
+        "kg_saved_per_week": 464.1,
+        "retail_protected_per_week_inr": 19837.0,
+        "extra_lane_cost_per_week_inr": 6000.0,
+        "net_annual_inr": 675450.0,
+        "recommendation": "Adopt PRECOOLED for Tomato: 8.6 pp protected, net positive."
+      },
+      {
+        "commodity": "Onion",
+        "best_temp": "AMBIENT",
+        "best_temp_spoilage_pct": 9.41,
+        "ambient_spoilage_pct": 9.41,
+        "delta_pp": 2.28,
+        "materially_significant": false,
+        "best_pack": "CFB_CRATE",
+        "pack_delta_pp": 2.91,
+        "weekly_kg": 5400.0,
+        "kg_saved_per_week": 123.1,
+        "retail_protected_per_week_inr": 6587.0,
+        "extra_lane_cost_per_week_inr": 0.0,
+        "net_annual_inr": 279957.0,
+        "recommendation": "Keep ambient for Onion: the ambient gain of 2.3 pp does not cover the lane cost change."
+      },
+      {
+        "commodity": "Banana",
+        "best_temp": "PRECOOLED",
+        "best_temp_spoilage_pct": 13.71,
+        "ambient_spoilage_pct": 18.86,
+        "delta_pp": 5.15,
+        "materially_significant": true,
+        "best_pack": "CFB_CRATE",
+        "pack_delta_pp": 3.05,
+        "weekly_kg": 5400.0,
+        "kg_saved_per_week": 278.2,
+        "retail_protected_per_week_inr": 13717.0,
+        "extra_lane_cost_per_week_inr": 6000.0,
+        "net_annual_inr": 340891.0,
+        "recommendation": "Adopt PRECOOLED for Banana: 5.2 pp protected, net positive."
+      },
+      {
+        "commodity": "Cauliflower",
+        "best_temp": "PRECOOLED",
+        "best_temp_spoilage_pct": 24.12,
+        "ambient_spoilage_pct": 36.19,
+        "delta_pp": 12.06,
+        "materially_significant": true,
+        "best_pack": "CFB_CRATE",
+        "pack_delta_pp": 3.89,
+        "weekly_kg": 5400.0,
+        "kg_saved_per_week": 651.5,
+        "retail_protected_per_week_inr": 37786.0,
+        "extra_lane_cost_per_week_inr": 6000.0,
+        "net_annual_inr": 1562356.0,
+        "recommendation": "Adopt PRECOOLED for Cauliflower: 12.1 pp protected, net positive."
+      }
+    ]
+  }
+}

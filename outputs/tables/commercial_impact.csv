@@ -1,0 +1,5 @@
+commodity,best_temp,best_temp_spoilage_pct,ambient_spoilage_pct,delta_pp,materially_significant,best_pack,pack_delta_pp,weekly_kg,kg_saved_per_week,retail_protected_per_week_inr,extra_lane_cost_per_week_inr,net_annual_inr,recommendation
+Tomato,PRECOOLED,19.38,27.98,8.6,True,CFB_CRATE,2.57,5400.0,464.1,19837.0,6000.0,675450.0,"Adopt PRECOOLED for Tomato: 8.6 pp protected, net positive."
+Onion,AMBIENT,9.41,9.41,2.28,False,CFB_CRATE,2.91,5400.0,123.1,6587.0,0.0,279957.0,Keep ambient for Onion: the ambient gain of 2.3 pp does not cover the lane cost change.
+Banana,PRECOOLED,13.71,18.86,5.15,True,CFB_CRATE,3.05,5400.0,278.2,13717.0,6000.0,340891.0,"Adopt PRECOOLED for Banana: 5.2 pp protected, net positive."
+Cauliflower,PRECOOLED,24.12,36.19,12.06,True,CFB_CRATE,3.89,5400.0,651.5,37786.0,6000.0,1562356.0,"Adopt PRECOOLED for Cauliflower: 12.1 pp protected, net positive."
