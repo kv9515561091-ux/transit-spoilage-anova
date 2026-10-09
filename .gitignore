@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Scratch
+*.log
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/
