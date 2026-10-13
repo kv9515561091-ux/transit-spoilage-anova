@@ -266,3 +266,26 @@ MIT — see [LICENSE](LICENSE).
 All 192 runs are synthetic. Retail values reference publicly reported
 All-India averages for October 2026; the loss benchmarks used to anchor the
 baseline decay rates reference published F&V supply-chain studies.
+
+---
+
+## Related projects
+
+Three companion projects on the same problem — how much of the gap between
+farm-gate cost and shelf price is recoverable in Indian F&V retail. They share
+a commodity master, a lane (Bengaluru PC → dark store, 62 km), and a set of
+grounded price and loss benchmarks. Each is a standalone repository; clone
+only the one you want.
+
+| project | question it answers | try it |
+| --- | --- | --- |
+| [fv-shrinkage-dashboard](https://github.com/kv9515561091-ux/fv-shrinkage-dashboard) | Why is stock being written off, and would enforcing rotation fix it? A counterfactual re-simulation attributes **57.3% of expiry** to FEFO failure | `pip install -r requirements.txt && python scripts/generate_data.py && python scripts/analyze.py` |
+| [fpo-sourcing-automation](https://github.com/kv9515561091-ux/fpo-sourcing-automation) | Can field data become a purchase-order line a buyer can act on? Apps Script; runs offline via a Python mirror | `python samples/generate_samples.py && python -m unittest discover -s samples` |
+| [mandi-margin-simulator](https://github.com/kv9515561091-ux/mandi-margin-simulator) | On any given day, is this line still worth buying? Node CLI, zero dependencies | `git clone https://github.com/kv9515561091-ux/mandi-margin-simulator.git && cd mandi-margin-simulator && node src/index.js simulate --days 30 --seed 99` |
+
+The connection worth noting: this study finds temperature is the dominant
+lever (ω² 0.18–0.65), with onions the exception. The dashboard project
+independently measures onion's FEFO compliance at **58.3% — among the worst** —
+yet its shrinkage is only 0.33%, because a 30-day shelf life cannot expire
+inside a one-week window. Same commodity, opposite intuition: the lines that
+need rotation discipline are precisely the ones it is hardest to apply it to.
