@@ -224,6 +224,9 @@ for banana the margin is thin enough to revisit on volume.
 
 ## Running it
 
+Requires **Python 3.9+** (developed and tested on 3.13) and the packages in
+`requirements.txt`. Runs on any OS — no Excel, no network, no credentials.
+
 ```bash
 pip install -r requirements.txt
 
@@ -236,6 +239,9 @@ asserts design integrity before drawing any inference — unique run IDs, a
 balanced 24 cells × 8 replicates, and spoilage bounded in 0–100%. An unbalanced
 design or an out-of-range response fails the run rather than producing a
 confident wrong answer.
+
+If you only want the conclusions, `outputs/STATISTICAL_REPORT.md` is committed
+and readable without running anything.
 
 ## Outputs
 
